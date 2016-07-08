@@ -20567,7 +20567,6 @@
 	  _createClass(App, [{
 	    key: 'render',
 	    value: function render() {
-	      var notes = this.state.notes;
 	      return _react2.default.createElement(
 	        'div',
 	        null,
