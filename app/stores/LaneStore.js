@@ -2,9 +2,10 @@ import uuid from 'node-uuid';
 import alt from '../libs/alt';
 import LaneActions from '../actions/LaneActions';
 
-class LaneStore{
-  constructor(){
+class LaneStore {
+  constructor() {
     this.bindActions(LaneActions);
+    
     this.lanes = [];
   }
 
@@ -15,7 +16,7 @@ class LaneStore{
 
     // If `notes` aren't privided for some reason;
     // default is empty array
-    lane.notes = lane.noted || [];
+    lane.notes = lane.notes || [];
 
     this.setState({
       lanes: lanes.concat(lane)

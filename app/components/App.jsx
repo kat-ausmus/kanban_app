@@ -7,7 +7,8 @@ import LaneStore from '../stores/LaneStore';
 export default class App extends React.Component {
   render() {
     return (
-      <div>
+      <div> 
+        <button className="add-lane" onClick={this.addLane}>+</button>
         <AltContainer
           stores={[LaneStore]}
           inject={{
@@ -20,12 +21,7 @@ export default class App extends React.Component {
     );
   }
 
-  // We are using an experimental feature known as property
-  // initializer here. It allows us to bind the method `this`
-  // to point at our *App* instance.
-  //
-  // Alternatively we could `bind` at `constructor` using
-  // a line, such as this.addNote = this.addNote.bind(this);
+
   addLane() {
       LaneActions.create({name: 'New lane'});
     }
