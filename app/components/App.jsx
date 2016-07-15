@@ -7,7 +7,7 @@ import LaneStore from '../stores/LaneStore';
 export default class App extends React.Component {
   render() {
     return (
-      <div> 
+      <div>
         <button className="add-lane" onClick={this.addLane}>+</button>
         <AltContainer
           stores={[LaneStore]}
@@ -23,7 +23,7 @@ export default class App extends React.Component {
 
 
   addLane() {
-      LaneActions.create({name: 'New lane'});
-    }
+      LaneActions.create({name: 'New Lane XX'});
+  }
 
 }
