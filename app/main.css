@@ -1,5 +1,4 @@
 body {
-  padding: 1em 2em;
   background: cornsilk;
   font-family: sans-serif;
 }
@@ -40,35 +39,58 @@ body {
 .note:hover .delete {
   visibility: visible;
 }
-.form {
-  clear: both;
-}
-.form button {
-  font-size: 1.5em;
-}
-.lanes {
 
-}
 .lane {
   display: inline-block;
-  margin-right: 1em;
-  padding: 0.5em;
+  margin: 1em;
   background-color: #efefef;
   border: 1px solid #ccc;
   border-radius: 0.5em;
+
+  min-width: 10em;
   vertical-align: top
 }
 
 .lane-header {
-  height: 20px;
+  overflow:auto;
+  padding: 1em;
+  color: #efefef;
+  background-color: #333;
+
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
 }
+
 .lane-name {
   float: left;
 }
-.lane-name button {
-  display: block;
-  clear: both;
-}
+
 .lane-add-note {
+  float: left;
+  margin-right: 0.5em;
+}
+
+.lane-delete{
   float: right;
+  margin-left: 0.5em;
+  visibility: hidden;
+}
+
+.lane-header:hover .lane-delete {
+  visibility: visible;
+}
+
+.add-lane, .lane-add-note button {
+  cursor: pointer;
+
+  background-color: #fdfdfd;
+  border:1px solid #ccc;
+}
+
+.lane-delete button{
+  padding:0;
+  cursor: pointer;
+  color: white;
+  background-color: rgba(0,0,0,0);
+  border: 0;
 }
