@@ -10,12 +10,17 @@ import ItemTypes from '../constants/itemTypes';
 
 const noteTarget = {
   hover(targetProps, monitor) {
-    const targetId = targetProps.lane.id;
     const sourceProps = monitor.getItem();
     const sourceId = sourceProps.id;
-    console.log(`Lane DnD source: ${sourceId}, target: ${targetId} `)
+    if(!targetProps.lane.notes.length){
+      //console.log(`Lane DnD source: ${sourceId}, target: `,targetProps);
+      LaneActions.attachToLane({
+        laneId: targetProps.lane.id,
+        noteId: sourceId
+      });
+    }
   }
-}
+};
 
 @DropTarget(ItemTypes.NOTE, noteTarget, (connect) => ({
   connectDropTarget: connect.dropTarget()
